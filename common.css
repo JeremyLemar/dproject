@@ -1,0 +1,38 @@
+        #container {width: 700px; border: solid 1px;}
+        #masthead {
+            background: #CCC
+            padding: 15px;}
+        #links {
+            width: 150px;
+            height: 500px;
+            float: left;
+            background: #EEE;}
+        #main {
+            float: left;
+            height: 500px;
+            width: 400px; }
+        #news 
+        {
+            float: left;
+            width: 150px;
+            height: 500px;            
+            background: #EEE;
+        }
+        #footer 
+        {
+            clear: both;
+            padding: 15px;
+            background: #666;
+        }
+        
+        a#logocontainer {
+        	float: left;
+        }
+        ul#nav{
+      		list-style-type: none;
+        	margin: 0px;
+        	padding: 0px;
+        }
+        ul#nav li {
+        	display:inline
+        }

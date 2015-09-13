@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="darcy2.xsl"?>
+<!-- Edited by XMLSpy® -->
+<TABLE>
+	<Row>
+		<EntryId>1</EntryId>
+		<Text>Are you mad?</Text>
+	</Row>
+	<Row>
+		<EntryId>13</EntryId>
+		<Text>chainsaw</Text>
+	</Row>
+	<Row>
+		<EntryId>1998</EntryId>
+		<Text>Champion du monde!!</Text>
+	</Row>
+	<Row>
+		<EntryId>2012</EntryId>
+		<Text>Espana!!</Text>
+	</Row>
+</TABLE>

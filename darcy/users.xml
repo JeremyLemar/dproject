@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="users.xsl"?>
+<!-- Edited by XMLSpy® -->
+<TABLE>
+	<Row>
+		<UserId>1</UserId>
+		<UserName>Are you mad?</UserName>
+	</Row>
+	<Row>
+		<UserId>13</UserId>
+		<UserName>chainsaw</UserName>
+	</Row>
+	<Row>
+		<UserId>1998</UserId>
+		<UserName>Champion du monde!!</UserName>
+	</Row>
+	<Row>
+		<UserId>2012</UserId>
+		<UserName>Espana!!</UserName>
+	</Row>
+</TABLE>
