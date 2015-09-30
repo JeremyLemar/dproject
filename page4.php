@@ -11,6 +11,7 @@
 <body onload="doCells();">
 
 	<?php include 'nav.php'?>
+   <?php if (login_check($mysqli) == true) : ?>
       
     <div id="container" >
         <div id="masthead" >
@@ -31,6 +32,9 @@
         </div>         
         <div id="footer">footer links</div>
     </div>
+   <?php else : ?>
+   	  <?php include 'includes/loginerror.php' ?>
+   <?php endif; ?>
   
     
 </body>

@@ -1,49 +1,51 @@
-<?php include 'session.php' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head>
-	<link rel="stylesheet" type="text/css" href="common.css"/>
-
-    <title>The D Project</title>
-    <script type="text/javascript" src="darcy/darcyScripts.js">
-    </script>
-</head>
-<body>
-  
-    <?php include 'nav.php' ?>
+<?php
+include_once 'includes/db_connect.php';
+include_once 'includes/functions.php';
  
-    <div id="container" >
-        <div id="masthead" >
-            <img id="Darcy" alt="This Darcy's site" src="darcy/Darcy.png" style="height:80px" />
-            <span>The Darcy-o-meter</span>
-         </div>
-            
-        <div id="links" >blah!
-        </div>
-        <div id="main" >
-        	<br/>
-        	<form name='myForm'>
-				Name: <input type='text' id="username"
-						name="username" /> 
-						<br />
-				Time: <input type='text' name='time' />
-				<br/>
-			</form>
-			<button id=login onclick="onNameChange()">Log In</button>
-			<hr/>
-			<button type="button" onclick="getAjax()">Ajax</button>
-			<button type="button" onclick="getAjax2()">Ajax2</button>
-			<br/>
-        	<span id="outputt">output</span>
-      	</div>
-        <div id="news">
-        	<h3>news and rec. links</h3>
-        	<hr/>
-        	<span id="UserList"></span>
-        </div>         
-        <div id="footer" >footer links</div>
-    </div>
-  
-    
-</body>
+sec_session_start();
+ 
+if (login_check($mysqli) == true) {
+    $logged = 'in';
+} else {
+    $logged = 'out';
+}
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Secure Login: Log In</title>
+        <link rel="stylesheet" type="text/css" href="common.css"/>
+        <script type="text/JavaScript" src="js/sha512.js"></script> 
+        <script type="text/JavaScript" src="js/forms.js"></script> 
+    </head>
+    <body>
+	<?php include 'nav.php' ?>
+      <div id="container" >
+        <?php
+        if (isset($_GET['error'])) {
+            echo '<p class="error">Error Logging In!</p>';
+        }
+        ?> 
+        <form action="includes/process_login.php" method="post" name="login_form">                      
+            Email: <input type="text" name="email" />
+            Password: <input type="password" 
+                             name="password" 
+                             id="password"/>
+            <input type="button" 
+                   value="Login" 
+                   onclick="formhash(this.form, this.form.password);" /> 
+        </form>
+ 
+<?php
+        if (login_check($mysqli) == true) {
+                        echo '<p>Currently logged ' . $logged . ' as ' . htmlentities($_SESSION['username']) . '.</p>';
+ 
+            echo '<p>Do you want to change user? <a href="includes/logout.php">Log out</a>.</p>';
+        } else {
+                        echo '<p>Currently logged ' . $logged . '.</p>';
+                        echo "<p>If you don't have a login, please <a href='register.php'>register</a></p>";
+                }
+?>    
+   </div>  
+    </body>
 </html>
